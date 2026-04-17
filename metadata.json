@@ -1,0 +1,9 @@
+{
+  "name": "shalom",
+  "description": "Sistema Inteligente de Gestão de Veículos com IA, Checklist e Controle de Pátio",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation"
+  ]
+}

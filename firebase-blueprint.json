@@ -1,0 +1,34 @@
+{
+  "entities": {
+    "Vehicle": {
+      "title": "Vehicle",
+      "description": "Represents a vehicle record in the IMPERIOECOLOG system.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Unique identifier for the vehicle." },
+        "userId": { "type": "string", "description": "UID of the user who owns this record." },
+        "placa": { "type": "string", "description": "Vehicle license plate." },
+        "marca": { "type": "string", "description": "Vehicle brand." },
+        "carro": { "type": "string", "description": "Vehicle model name." },
+        "cor": { "type": "string", "description": "Vehicle color." },
+        "entrada": { "type": "string", "format": "date-time", "description": "Entry timestamp." },
+        "vaga": { "type": "string", "description": "Assigned parking spot." },
+        "responsavelRecebimento": { "type": "string", "description": "Person responsible for receiving the vehicle." },
+        "responsavelEntrega": { "type": "string", "description": "Person responsible for delivering the vehicle." },
+        "dataRetirada": { "type": "string", "format": "date-time", "description": "Exit timestamp." },
+        "fotos": { "type": "array", "items": { "type": "string" }, "description": "List of photo URLs." },
+        "checklist": { "type": "object", "description": "Checklist items status." },
+        "observacoes": { "type": "string", "description": "Additional notes." },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Creation timestamp." },
+        "updatedAt": { "type": "string", "format": "date-time", "description": "Last update timestamp." }
+      },
+      "required": ["id", "userId", "placa", "marca", "carro", "entrada"]
+    }
+  },
+  "firestore": {
+    "/vehicles/{vehicleId}": {
+      "schema": "Vehicle",
+      "description": "Collection of vehicle records."
+    }
+  }
+}
